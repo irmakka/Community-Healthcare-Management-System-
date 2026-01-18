@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Community Health Care Management</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <h1> Patient Management</h1>
+    <div class="menu">
+        <a href="index.html">Clinics</a>
+        <a href="doctors.html">Doctors</a>
+        <a href="patient.html">Patients</a>
+        <a href="room.html">Rooms</a>
+    </div>
+    <div class="container">
+        <h1>Patient Management</h1>
+        <div class="section">
+            <h2>Add Patient</h2>
+            <div class="form">
+                <input type="text" id="patientName" placeholder="Name">
+                <input type="text" id="patientSurname" placeholder="Surname">
+                <select id="patientAge">
+                    <option value="">Select Age</option>
+                </select>
+                <input type="text" id="patientTC" placeholder="TC">
+                <input type="text" id="patientPhone" placeholder="Phone">
+                <select class="clinicSelect">
+                    <option value="">Select Clinic</option>
+                </select>
+                <select class="doctorSelect">
+                    <option value="">Select Doctor</option>
+                </select>
+                <button onclick="addPatientToClinicAndDoctor()">Add Patient</button>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Patient List</h2>
+            <div class="filter-box">
+                <h3>1. Select Clinic</h3>
+                <select class="clinicSelect">
+                    <option value="">Select Clinic</option>
+                </select>
+            </div>
+            <div class="filter-box" id="doctorFilter">
+                <h3>2. Select Doctor</h3>
+                <select class="doctorSelect" onchange="">
+                    <option value="">Select Doctor</option>
+                </select>
+            </div>
+            <div id="patientSection">
+                <h2>Patients</h2>
+                <div id="selectedDoctorInfo"></div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Age</th>
+                            <th>TC</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody id="patientTable">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script src="api.js"></script>
+</body>
+</html>
